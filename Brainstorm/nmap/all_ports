@@ -1,0 +1,49 @@
+# Nmap 7.91 scan initiated Wed Jul 28 22:02:04 2021 as: nmap -sC -sV -p- -oN nmap/all_ports -vvv -Pn 10.10.85.66
+Nmap scan report for 10.10.85.66
+Host is up, received user-set (0.21s latency).
+Scanned at 2021-07-28 22:02:17 PDT for 320s
+Not shown: 65533 filtered ports
+Reason: 65533 no-responses
+PORT     STATE SERVICE            REASON  VERSION
+21/tcp   open  ftp                syn-ack Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|_  SYST: Windows_NT
+3389/tcp open  ssl/ms-wbt-server? syn-ack
+| ssl-cert: Subject: commonName=brainstorm
+| Issuer: commonName=brainstorm
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2021-07-27T21:54:59
+| Not valid after:  2022-01-26T21:54:59
+| MD5:   d0a9 ce97 c5c9 34d2 cb56 5cb0 e979 2b9c
+| SHA-1: 0be8 a93b 37e9 338b 7d75 703c 7659 eca3 9962 0805
+| -----BEGIN CERTIFICATE-----
+| MIIC2DCCAcCgAwIBAgIQPeOyMgojd59KA9hk3AJttTANBgkqhkiG9w0BAQUFADAV
+| MRMwEQYDVQQDEwpicmFpbnN0b3JtMB4XDTIxMDcyNzIxNTQ1OVoXDTIyMDEyNjIx
+| NTQ1OVowFTETMBEGA1UEAxMKYnJhaW5zdG9ybTCCASIwDQYJKoZIhvcNAQEBBQAD
+| ggEPADCCAQoCggEBAJmcDtwIQQ53biFslO3im7zpw5tYwmFMxi8C+wPZWKMM8k/R
+| 1Fr+bu0UrR6jBh0b5wgkATM41eoLIm+VRcnufJhBlYdM1Sqry8At32d9l+KpZngL
+| n3pcAwqZr4V/dDNLmExonDCcCItxIqh2hK3Ai/UxH+EulEVJ14XdJQwwLyNsHwr2
+| hgBg/O1lTSQuOYbbXA6zcF+mJ0mlH0hrpMGiAjd67qDlzBoe4WcHCicPC7uLCIEk
+| MGRrxyEouq2wPOUE1Dyix4qwIALBjlcRxtw84NnsmoqAAvad2QGN+bM/6rbBaHmQ
+| OGFByktxXCmqgYDPaGPQMlSCf3U8wnBVZLaVf3UCAwEAAaMkMCIwEwYDVR0lBAww
+| CgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqGSIb3DQEBBQUAA4IBAQB/zv5P
+| AdRfXAC/xLgIfT1WvPSRKcnx0YY0ZDCLnMVtPAe6D+/JiKkNxOpb59F11tRpGvLi
+| 9VTQP+e79MX3nrUpP3XB5aAfRLD571GZ7TEGHu693IkgoFvTOxjigjCyeQ+867DN
+| qWcQyOYFTi5LPcg6Cfyl5gYb1coV9LqlZ8pHCxuMu5ZLza0uxpdOzfjPrjjEbOVL
+| uq3IKBV87BpKRBU1I0nM5MOIZbDLk+lXVLovdb7fbU1K0U4CT9yahs4A8wME54c7
+| J9WZI2DyArRTPUpFucOaVrO/wgjVUqocqhWjWSw5GSOUb1MS8ajS+SGvPqRfFRNF
+| rxIfsy+LbrDZJiqX
+|_-----END CERTIFICATE-----
+|_ssl-date: 2021-07-28T22:07:30+00:00; -7h00m07s from scanner time.
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: -7h00m07s
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jul 28 22:07:37 2021 -- 1 IP address (1 host up) scanned in 333.25 seconds

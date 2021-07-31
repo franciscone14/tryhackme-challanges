@@ -1,0 +1,23 @@
+# Nmap 7.91 scan initiated Thu Jul  1 21:47:20 2021 as: nmap -sV -vvv -oO 10.10.216.55 nmap.txt
+Failed to resolve "nmap.txt".
+Failed to resolve "nmap.txt".
+Increasing send delay for 10.10.216.55 from 20 to 40 due to 11 out of 29 dropped probes since last increase.
+Nmap scan report for 10.10.216.55
+Host is up, received reset ttl 61 (0.20s latency).
+Scanned at 2021-07-01 21:47:20 PDT for 57s
+Not shown: 993 closed ports
+Reason: 993 resets
+PORT      STATE    SERVICE     REASON         VERSION
+22/tcp    open     ssh         syn-ack ttl 61 OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+80/tcp    open     http        syn-ack ttl 61 Apache httpd 2.4.18 ((Ubuntu))
+110/tcp   open     pop3        syn-ack ttl 61 Dovecot pop3d
+139/tcp   open     netbios-ssn syn-ack ttl 61 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+143/tcp   open     imap        syn-ack ttl 61 Dovecot imapd
+445/tcp   open     netbios-ssn syn-ack ttl 61 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+65129/tcp filtered unknown     no-response
+Service Info: Host: SKYNET; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Failed to resolve "nmap.txt".
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jul  1 21:48:17 2021 -- 1 IP address (1 host up) scanned in 57.19 seconds

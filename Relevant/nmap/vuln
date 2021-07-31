@@ -1,0 +1,40 @@
+# Nmap 7.91 scan initiated Wed Jul  7 21:45:02 2021 as: nmap --script vuln -oN nmap/vuln -vvv 10.10.208.76
+Nmap scan report for 10.10.208.76
+Host is up, received syn-ack (0.20s latency).
+Scanned at 2021-07-07 21:45:12 PDT for 626s
+Not shown: 995 filtered ports
+Reason: 995 no-responses
+PORT     STATE SERVICE       REASON
+80/tcp   open  http          syn-ack
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+135/tcp  open  msrpc         syn-ack
+139/tcp  open  netbios-ssn   syn-ack
+445/tcp  open  microsoft-ds  syn-ack
+3389/tcp open  ms-wbt-server syn-ack
+|_sslv2-drown: 
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: ERROR: Script execution failed (use -d to debug)
+| smb-vuln-ms17-010: 
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+|           
+|     Disclosure date: 2017-03-14
+|     References:
+|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Jul  7 21:55:38 2021 -- 1 IP address (1 host up) scanned in 636.13 seconds

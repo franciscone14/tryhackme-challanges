@@ -1,0 +1,99 @@
+# Nmap 7.91 scan initiated Sat Jul  3 21:32:55 2021 as: nmap --script vuln -oN nmap/vuln -vvv 10.10.59.20
+Nmap scan report for 10.10.59.20
+Host is up, received conn-refused (0.20s latency).
+Scanned at 2021-07-03 21:33:10 PDT for 137s
+Not shown: 997 closed ports
+Reason: 997 conn-refused
+PORT     STATE SERVICE REASON
+22/tcp   open  ssh     syn-ack
+80/tcp   open  http    syn-ack
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.59.20
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.59.20:80/
+|     Form id: login-form
+|     Form action: /index.php
+|     
+|     Path: http://10.10.59.20:80/index.php
+|     Form id: login-form
+|     Form action: /index.php
+|     
+|     Path: http://10.10.59.20:80/index.php/component/users/?view=reset&amp;Itemid=101
+|     Form id: user-registration
+|     Form action: /index.php/component/users/?task=reset.request&Itemid=101
+|     
+|     Path: http://10.10.59.20:80/index.php/component/users/?view=reset&amp;Itemid=101
+|     Form id: login-form
+|     Form action: /index.php/component/users/?Itemid=101
+|     
+|     Path: http://10.10.59.20:80/index.php/component/users/?view=remind&amp;Itemid=101
+|     Form id: user-registration
+|     Form action: /index.php/component/users/?task=remind.remind&Itemid=101
+|     
+|     Path: http://10.10.59.20:80/index.php/component/users/?view=remind&amp;Itemid=101
+|     Form id: login-form
+|     Form action: /index.php/component/users/?Itemid=101
+|     
+|     Path: http://10.10.59.20:80/index.php/2-uncategorised/1-spider-man-robs-bank
+|     Form id: login-form
+|     Form action: /index.php
+|     
+|     Path: http://10.10.59.20:80/index.php/2-uncategorised
+|     Form id: login-form
+|_    Form action: /index.php
+| http-dombased-xss: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.59.20
+|   Found the following indications of potential DOM based XSS: 
+|     
+|     Source: window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no')
+|_    Pages: http://10.10.59.20:80/, http://10.10.59.20:80/index.php, http://10.10.59.20:80/index.php/2-uncategorised/1-spider-man-robs-bank, http://10.10.59.20:80/index.php/2-uncategorised
+| http-enum: 
+|   /administrator/: Possible admin folder
+|   /administrator/index.php: Possible admin folder
+|   /robots.txt: Robots file
+|   /administrator/manifests/files/joomla.xml: Joomla version 3.7.0
+|   /language/en-GB/en-GB.xml: Joomla version 3.7.0
+|   /htaccess.txt: Joomla!
+|   /README.txt: Interesting, a readme.
+|   /bin/: Potentially interesting folder
+|   /cache/: Potentially interesting folder
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /images/: Potentially interesting folder
+|   /includes/: Potentially interesting folder
+|   /libraries/: Potentially interesting folder
+|   /modules/: Potentially interesting folder
+|   /templates/: Potentially interesting folder
+|_  /tmp/: Potentially interesting folder
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-trace: TRACE is enabled
+| Headers:
+| Date: Sat, 03 Jul 2021 21:33:22 GMT
+| Server: Apache/2.4.6 (CentOS) PHP/5.6.40
+| Connection: close
+| Transfer-Encoding: chunked
+|_Content-Type: message/http
+| http-vuln-cve2017-8917: 
+|   VULNERABLE:
+|   Joomla! 3.7.0 'com_fields' SQL Injection Vulnerability
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-8917
+|     Risk factor: High  CVSSv3: 9.8 (CRITICAL) (CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H)
+|       An SQL injection vulnerability in Joomla! 3.7.x before 3.7.1 allows attackers
+|       to execute aribitrary SQL commands via unspecified vectors.
+|       
+|     Disclosure date: 2017-05-17
+|     Extra information:
+|       User: root@localhost
+|     References:
+|       https://blog.sucuri.net/2017/05/sql-injection-vulnerability-joomla-3-7.html
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8917
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+3306/tcp open  mysql   syn-ack
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sat Jul  3 21:35:27 2021 -- 1 IP address (1 host up) scanned in 152.00 seconds

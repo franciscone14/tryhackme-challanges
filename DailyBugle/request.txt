@@ -1,0 +1,16 @@
+POST /index.php HTTP/1.1
+Host: 10.10.59.20
+Content-Length: 145
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://10.10.59.20
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://10.10.59.20/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: eaa83fe8b963ab08ce9ab7d4a798de05=8oolb5lbhc6gpqq7qe42kd1n92
+Connection: close
+
+username=admin&password=admin&Submit=&option=com_users&task=user.login&return=aHR0cDovLzEwLjEwLjU5LjIwLw%3D%3D&508055771817c9b9121c870165544a55=1

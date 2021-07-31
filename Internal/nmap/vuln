@@ -1,0 +1,13 @@
+# Nmap 7.91 scan initiated Fri Jul  9 18:10:57 2021 as: nmap --script http-wordpress-users --script-args basepath=blog -vvv -oN nmap/vuln internal.thm
+Nmap scan report for internal.thm (10.10.88.106)
+Host is up, received syn-ack (0.20s latency).
+Scanned at 2021-07-09 18:10:57 PDT for 31s
+Not shown: 998 closed ports
+Reason: 998 conn-refused
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Fri Jul  9 18:11:28 2021 -- 1 IP address (1 host up) scanned in 31.09 seconds

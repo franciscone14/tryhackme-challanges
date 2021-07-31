@@ -1,0 +1,85 @@
+# Nmap 7.91 scan initiated Wed Jul  7 21:41:49 2021 as: nmap -sV -sC -oN nmap/initial -vvv 10.10.208.76
+Nmap scan report for 10.10.208.76
+Host is up, received syn-ack (0.20s latency).
+Scanned at 2021-07-07 21:41:49 PDT for 62s
+Not shown: 995 filtered ports
+Reason: 995 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+80/tcp   open  http          syn-ack Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Windows Server 2016 Standard Evaluation 14393 microsoft-ds
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: RELEVANT
+|   NetBIOS_Domain_Name: RELEVANT
+|   NetBIOS_Computer_Name: RELEVANT
+|   DNS_Domain_Name: Relevant
+|   DNS_Computer_Name: Relevant
+|   Product_Version: 10.0.14393
+|_  System_Time: 2021-07-07T21:42:07+00:00
+| ssl-cert: Subject: commonName=Relevant
+| Issuer: commonName=Relevant
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-07-06T21:40:14
+| Not valid after:  2022-01-05T21:40:14
+| MD5:   53f4 e9ec 484d 21fa 0f84 2df5 b6c6 d3af
+| SHA-1: 7721 a020 df1d 6808 9032 1480 c43b cf1d ac15 4968
+| -----BEGIN CERTIFICATE-----
+| MIIC1DCCAbygAwIBAgIQPq4GEK52r6pI15a+hppg7jANBgkqhkiG9w0BAQsFADAT
+| MREwDwYDVQQDEwhSZWxldmFudDAeFw0yMTA3MDYyMTQwMTRaFw0yMjAxMDUyMTQw
+| MTRaMBMxETAPBgNVBAMTCFJlbGV2YW50MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+| MIIBCgKCAQEAxuWRodeyip6L4BgBPphLWgUg1oYAKk3rvowJGD6zM2OaK2LeVXJk
+| SpmeClX6FY7CTMoMIXy/DY4qNrzYvlYSxnpABann5kdSOoKttg9t7S2tYBdXbepQ
+| NiuTycN/kbFjPu2vgWw2jV/hAXPJ0Qt8XfJSKHnbwtsBa+19FjZT/jEpccmcPKJ2
+| Kq+Vu5YFlYQ8BeByWJAzv2RUyJFr7oPgywtYAOa6l36Vg4SKEGH2GEYcM93qj0SR
+| XViwFazqjeT2+fTA03eYemEK99H5S2W/3pw716K0e21qRpB/zHqaoIKbQK3Q3FgZ
+| tBBlPLLOh1rCWsOdNrm4WYoau2TwrA/RTwIDAQABoyQwIjATBgNVHSUEDDAKBggr
+| BgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQADggEBADx+HekJBK2t
+| 5B6MrzUmTqtdCoOG50Yay/tCa1lhN99KvEZ4ntRK+N7+X+EJMuAk7HeCxITK2xtt
+| htMhxDvJRwHV3kAsKyweXwt3d/TDzEftcOpdV7X8+/Gmzmx11OKBr2Fteqr80x87
+| PnEUOsS8/+llmC4mktXmvwy0hFrUWk3RzP/8DIkFwopHJYxw0nZy9ymcs5n7gImY
+| LiJ2y4Zb65n/kTvJIJJeCZorkVZpTaSt4+GECv0+l1+9yaq8tIpAwu6JKfnvII7s
+| ViPIg0vQK2b5riV01Xv6Vqh8s/ANLFN0jQhgTw9qteqYAnZnViZc3tMQUESKNLE1
+| LA3ME6a99us=
+|_-----END CERTIFICATE-----
+|_ssl-date: 2021-07-07T21:42:48+00:00; -7h00m03s from scanner time.
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -5h36m02s, deviation: 3h07m51s, median: -7h00m03s
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 7548/tcp): CLEAN (Timeout)
+|   Check 2 (port 18389/tcp): CLEAN (Timeout)
+|   Check 3 (port 36866/udp): CLEAN (Timeout)
+|   Check 4 (port 23136/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+|   Computer name: Relevant
+|   NetBIOS computer name: RELEVANT\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2021-07-07T14:42:09-07:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-07-07T21:42:11
+|_  start_date: 2021-07-07T21:40:15
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jul  7 21:42:51 2021 -- 1 IP address (1 host up) scanned in 62.44 seconds
